@@ -1,0 +1,43 @@
+{% load static %}
+<!--{% static 'path/to/file.css' %}-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Title</title>
+<!--	Bootstrap-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+
+<!--	Custom styles-->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+
+</head>
+<body>
+<!-- Описание выбранного товара -->
+	<div class="general-container">
+		<div class="container top-container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-4">
+					<h1 class="title"> Our clothing, your comfort </h1>
+					<h1 class="title">Оставляйте Ваш email в форме ниже </h1>
+					<div>
+						<form action="" method="post" class="form-inline text-center">{% csrf_token %}
+						<div class="form-group">
+							<label>Ваш email : </label>
+							<input name="{{ form.email.name }}" class="form-control">
+						</div>
+						<div class="form-group">
+							<label>Ваше имя : </label>
+							<input name="{{ form.name.name }}" class="form-control">
+						</div>
+						<button type="submit" class="btn btn-primary orange-btn">Отправить</button>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
